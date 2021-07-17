@@ -23,8 +23,8 @@ class Discriminator(nn.Module):
         im_dim: scalar representing dimension of images in the dataset
         hidden_dim: scalar representing inner dimension
     '''
-    def __init__(self):
-        super(Discriminator).__init__()
+    def __init__(self, im_dim=784, hidden_dim=128):
+        super(Discriminator, self).__init__()
         self.disc = nn.Sequential(
             discriminator_block(im_dim, hidden_dim * 4),
             discriminator_block(hidden_dim * 4, hidden_dim * 2),
